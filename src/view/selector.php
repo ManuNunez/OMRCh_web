@@ -1,19 +1,13 @@
-<!-- funciones.php -->
-
 <?php
 function contentSelector($section) {
-    switch ($section) {
-        case 'training':
-            include 'training.php';
-            break;
-        case 'registration':
-            include 'registration.php';
-            break;
-        case 'trainingMaterial':
-            include 'trainingMaterial.php';
-            break;
-        default:
-            include 'defaultContent.php'; 
+    $allowedSections = ['training', 'registration', 'trainingMaterial'];
+    
+    if (in_array($section, $allowedSections)) {
+        $filename = $section . '.php';
+    } else {
+        $filename = 'defaultContent.php';
     }
+
+    include_once $filename;
 }
 ?>
