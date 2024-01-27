@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OMRCh</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="font-sans bg-gray-100 flex flex-col min-h-screen">
+
+  <nav class="bg-blue-500 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-white text-2xl font-bold">Olimpiada de Matemáticas</a>
+      
+      <div class="flex space-x-4">
+        <a href="training.html" class="text-white hidden md:inline">Entrenamientos</a>
+        <a href="pagina2.html" class="text-white hidden md:inline">Cómo Participar</a>
+        <a href="pagina3.html" class="text-white hidden md:inline">Contacto</a>
+        
+        <div class="md:hidden">
+          <button id="menuBtn" class="text-white">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="menu" class="md:hidden hidden transition-all duration-300 ease-in-out">
+      <a href="training.html" class="block p-2 text-white">Entrenamientos</a>
+      <a href="registration.html" class="block p-2 text-white">Cómo Participar</a>
+      <a href="pagina3.html" class="block p-2 text-white">Contacto</a>
+    </div>
+  </nav>
+
+  <section class="container mx-auto my-8">
+    <h2 class="text-2xl font-bold mb-4">Material de Entrenamiento</h2>
+
+   
+    <div class="mb-8">
+      <h3 class="text-xl font-bold mb-2">Nivel 1</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <div class="bg-white p-4 rounded-md shadow-md">
+          <h4 class="text-lg font-bold mb-2">Sesión 1</h4>
+          <p class="text-gray-600 mb-4">Descripción de la sesión.</p>
+          <div class="flex justify-between">
+            <a href="pdf/alumno_nivel1_sesion1.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-md">Descargar para Alumnos</a>
+            <a href="pdf/profesor_nivel1_sesion1.pdf" class="bg-green-500 text-white px-4 py-2 rounded-md">Descargar para Profesores</a>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-md shadow-md">
+          <h4 class="text-lg font-bold mb-2">Sesión 2</h4>
+          <p class="text-gray-600 mb-4">Descripción de la sesión.</p>
+          <div class="flex justify-between">
+            <a href="pdf/alumno_nivel1_sesion2.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-md">Descargar para Alumnos</a>
+            <a href="pdf/profesor_nivel1_sesion2.pdf" class="bg-green-500 text-white px-4 py-2 rounded-md">Descargar para Profesores</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="mb-8">
+      <h3 class="text-xl font-bold mb-2">Nivel 2</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <div class="bg-white p-4 rounded-md shadow-md">
+          <h4 class="text-lg font-bold mb-2">Sesión 1</h4>
+          <p class="text-gray-600 mb-4">Descripción de la sesión.</p>
+          <div class="flex justify-between">
+            <a href="pdf/alumno_nivel2_sesion1.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-md">Descargar para Alumnos</a>
+            <a href="pdf/profesor_nivel2_sesion1.pdf" class="bg-green-500 text-white px-4 py-2 rounded-md">Descargar para Profesores</a>
+          </div>
+        </div>
+
+        
+        <div class="bg-white p-4 rounded-md shadow-md">
+          <h4 class="text-lg font-bold mb-2">Sesión 2</h4>
+          <p class="text-gray-600 mb-4">Descripción de la sesión.</p>
+          <div class="flex justify-between">
+            <a href="pdf/alumno_nivel2_sesion2.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-md">Descargar para Alumnos</a>
+            <a href="pdf/profesor_nivel2_sesion2.pdf" class="bg-green-500 text-white px-4 py-2 rounded-md">Descargar para Profesores</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </section>
+
+
+
+  <footer class="bg-gray-900 text-white py-4 fixed bottom-0 w-full">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Olimpiada de Matemáticas - Ribera de Chapala. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+
+  <script src="resources/js/nav_btn.js"></script>
+
+</body>
+</html>
