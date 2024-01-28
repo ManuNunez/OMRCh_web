@@ -12,10 +12,9 @@
 
 	<?php
 	include('components/nav.php');
-	echo "sasjdhaskdjh";
+
 	?>
 
-	<h1>a</h1>
 
 	<?php
 	include('components/footer.php');
