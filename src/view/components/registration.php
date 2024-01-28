@@ -46,6 +46,15 @@
                 </div>
 
             </div>
+            <div class="mb-4">
+                <div class="mb-4">
+                    <label for="level" class="block text-sm font-medium text-gray-700">Sede</label>
+                    <select id="level" name="level" class="mt-1 p-2 w-full border rounded-md">
+                        <option value=""></option>
+                    </select>
+                </div>
+
+            </div>
 
             <div class="mb-4">
                 <label for="teacherName" class="block text-sm font-medium text-gray-700">Nombre del Profesor</label>
