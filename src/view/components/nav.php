@@ -24,14 +24,18 @@
     <a href="?section=trainingMaterial" class="block p-2 text-white">Material de Entrenamiento</a>
   </div>
 </nav>
-
 <?php
-// Incluye el archivo selector.php que contiene la función contentSelector
-include_once ('../selector.php');
 
-// Obtén el valor de la variable 'section' de la URL
+include_once 'selector.php';
+
+
 $section = isset($_GET['section']) ? $_GET['section'] : '';
 
-// Llama a la función contentSelector con la sección proporcionada
-contentSelector($section);
+
+if (function_exists('contentSelector')) {
+    contentSelector($section);
+} else {
+    echo 'La función contentSelector no está definida.';
+}
+
 ?>
