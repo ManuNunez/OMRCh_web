@@ -6,7 +6,7 @@
     <div class="flex space-x-4">
       <a href="?section=training" class="text-white hidden md:inline">Entrenamientos</a>
       <a href="?section=registration" class="text-white hidden md:inline">Cómo Participar</a>
-      <a href="?section=trainingMaterial" class="text-white hidden md:inline">Material de Entrenamiento</a>
+      <a href="?section=login" class="text-white hidden md:inline">Inicio de Sesion</a>
       
       <div class="md:hidden">
         <button id="menuBtn" class="text-white">
