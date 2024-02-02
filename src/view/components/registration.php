@@ -16,26 +16,26 @@
     <div class="bg-white p-8 rounded-lg shadow-md">
         <h2 class="text-2xl font-bold mb-4">Inscripción</h2>
 
-        <form>
+        <form id="record">
             <div class="mb-4">
                 <label for="fullName" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
-                <input type="text" id="fullName" name="fullName" class="mt-1 p-2 w-full border rounded-md">
+                <input type="text" id="fullName" name="fullName" class="mt-1 p-2 w-full border rounded-md" required>
             </div>
 
             <div class="mb-4">
                 <label for="participantEmail" class="block text-sm font-medium text-gray-700">Correo del Participante</label>
-                <input type="email" id="participantEmail" name="participantEmail" class="mt-1 p-2 w-full border rounded-md">
+                <input type="email" id="participantEmail" name="participantEmail" class="mt-1 p-2 w-full border rounded-md" required>
             </div>
 
             <div class="mb-4">
                 <label for="school" class="block text-sm font-medium text-gray-700">Escuela</label>
-                <input type="text" id="school" name="school" class="mt-1 p-2 w-full border rounded-md">
+                <input type="text" id="school" name="school" class="mt-1 p-2 w-full border rounded-md" required>
             </div>
 
             <div class="mb-4">
                 <div class="mb-4">
                     <label for="level" class="block text-sm font-medium text-gray-700">Nivel</label>
-                    <select id="level" name="level" class="mt-1 p-2 w-full border rounded-md">
+                    <select id="level" name="level" class="mt-1 p-2 w-full border rounded-md" required>
                         <option value="I">I hasta 5to de primaria</option>
                         <option value="II">II 6to de primaria</option>
                         <option value="III">III 1ro de secundaria</option>
@@ -48,9 +48,9 @@
             </div>
             <div class="mb-4">
                 <div class="mb-4">
-                    <label for="level" class="block text-sm font-medium text-gray-700">Sede</label>
-                    <select id="level" name="level" class="mt-1 p-2 w-full border rounded-md">
-                        <option value=""></option>
+                    <label for="campus" class="block text-sm font-medium text-gray-700">Sede</label>
+                    <select id="campus" name="campus" class="mt-1 p-2 w-full border rounded-md" required>
+                        <option value="example">Example</option>
                     </select>
                 </div>
 
@@ -58,17 +58,17 @@
 
             <div class="mb-4">
                 <label for="teacherName" class="block text-sm font-medium text-gray-700">Nombre del Profesor</label>
-                <input type="text" id="teacherName" name="teacherName" class="mt-1 p-2 w-full border rounded-md">
+                <input type="text" id="teacherName" name="teacherName" class="mt-1 p-2 w-full border rounded-md" required>
             </div>
 
             <div class="mb-4">
                 <label for="teacherEmail" class="block text-sm font-medium text-gray-700">Correo del Profesor</label>
-                <input type="email" id="teacherEmail" name="teacherEmail" class="mt-1 p-2 w-full border rounded-md">
+                <input type="email" id="teacherEmail" name="teacherEmail" class="mt-1 p-2 w-full border rounded-md" required>
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 <button type="button" onclick="closeModal()" class="text-gray-500 mr-4">Cancelar</button>
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Inscribirse</button>
+                <button type="submit" onclick="validateData()" class="bg-blue-500 text-white px-4 py-2 rounded-md">Inscribirse</button>
             </div>
         </form>
     </div>
