@@ -9,6 +9,7 @@
     }
 
     function validateData(){
+      event.preventDefault();
       const form = document.getElementById('record');
       const formElements = form.elements;
 
