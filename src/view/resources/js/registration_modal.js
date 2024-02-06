@@ -51,6 +51,7 @@
         }
         console.log(formData.name + ", " + formData.timestamp);
         sendDataToTheServer(formData);
+        window.location.href = '?section=user-registered';
         
         
     }

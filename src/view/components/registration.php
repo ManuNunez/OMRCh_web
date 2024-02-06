@@ -74,5 +74,4 @@
     </div>
 </div>
 
-</div>
 <script src="resources/js/registration_modal.js"></script>
