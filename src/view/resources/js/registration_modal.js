@@ -13,13 +13,13 @@
       const form = document.getElementById('record');
       const formElements = form.elements;
 
-      for (let i = 0; i < formElements.length; i++) {
+     /* for (let i = 0; i < formElements.length; i++) {
         if (!formElements[i].checkValidity()) {
           // Si algún campo no es válido, mostrar mensaje de error y salir de la función
           alert('Por favor, complete todos los campos correctamente.');
           return;
         }
-      }
+      }*/
 
       sendForm();
 
@@ -52,24 +52,27 @@
         console.log(formData.name + ", " + formData.timestamp);
         sendDataToTheServer(formData);
         window.location.href = '?section=user-registered';
-        
+
         
     }
 
 
     function sendDataToTheServer(formData){ // This is Ajax de jQuery dog you'll love it.
         $.ajax({
-            url:"../../backend/services/registration_DB.php",
+            url:"../backend/services/registration_DB.php",
             type:"POST",
-            data:'name=aaaa',
+            data:formData,
             success:function (res){
-                console.log('SUCCESS: '+ res );
+                if(res == 1){
+                    window.location.href = '?section=user-registered';
+                }
                 // Iker aqui a regrega la comprobacion para el usuario de que se registro con exito
-                // estaria chido implemetar envios de correo electronico por medio de STP
-                // si les late la idea diganme para inplementarlo.
+                // IMPORTANTEEEEEEEE
+                // Iker agrega un explode para que busques el primer elemento que te envio si sale bien es 1 si no es 0
+                // pero cuando es 0 no solo te envio el 0 si no tambien el erro atras entonces maneja los errores.
             },
             error:function (){
-                alert('File not Found!');
+                alert('File not Found!'); // Este solo es cuando no ecnuentra el archivo
             }
         });
 

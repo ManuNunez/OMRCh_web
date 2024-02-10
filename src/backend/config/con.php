@@ -1,8 +1,8 @@
 <?php
-    define("HOST",'localhost'); // DataBase Ipv4
-    define("BD",''); // Table name
-    define("USER",'root'); // Database Username
-    define("PASS_BD",'');
+    define("HOST",'45.79.19.252'); // DataBase Ipv4
+    define("BD",'OMRCH'); // Table name
+    define("USER_BD",'root'); // Database Username
+    define("PASS_BD",'TioGazpacho');
 
     function connection(){
         $con = new mysqli(HOST,USER_BD,PASS_BD,BD);

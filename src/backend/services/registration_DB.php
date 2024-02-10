@@ -9,19 +9,30 @@
     $coach_Email = $_REQUEST['teacherEmail'];
     $registration_timeStamp = $_REQUEST['timestamp'];
 
-/*
-
-    $query = "INSERT INTO 'TABLE_NAME_CHANGE_THIS_DOGG' 
-                                (USERNAME,EMAIL,SCHOOL_NAME,MATH_LEVEL,COACH_NAME,COACH_EMAIL,REGISTRATION_TIMESTAMP) 
-                                VALUES ('$UserName','$email','$school_Name','$level','$coach_Name',
-                                '$coach_Email','$registration_timeStamp')";
+    $query = "INSERT INTO Participants(
+     name,
+     email,
+     school,
+     competition_level,
+     coach_name,
+     coach_email,
+     REGISTRATION_TIMESTAMP
+     )
+    VALUES(
+   '$UserName',
+   '$email',
+   '$school_Name',
+   '$level',
+   '$coach_Name',
+    '$coach_Email',
+   '$registration_timeStamp'
+   )";
     $res = $conn->query($query);
     if($res){
         $conn->close();
         echo 1;
     }else{
-        echo 'Error during the query: ' . $conn->error;
-    }*/
-echo '$UserName','$email','$school_Name','$level','$coach_Name',
-'$coach_Email','$registration_timeStamp';
-    ?>
+        echo 0 .'Error during the query: ' . $conn->error;
+    }
+
+?>
