@@ -75,3 +75,4 @@
 </div>
 
 <script src="resources/js/registration_modal.js"></script>
+<script src="../controller/registration.js"></script>

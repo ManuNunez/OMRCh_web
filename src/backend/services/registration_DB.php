@@ -10,29 +10,31 @@
     $registration_timeStamp = $_REQUEST['timestamp'];
 
     $query = "INSERT INTO Participants(
-     name,
-     email,
-     school,
-     competition_level,
-     coach_name,
-     coach_email,
-     REGISTRATION_TIMESTAMP
-     )
+    name,
+    email,
+    school,
+    competition_level,
+    coach_name,
+    coach_email,
+    REGISTRATION_TIMESTAMP
+    )
     VALUES(
-   '$UserName',
-   '$email',
-   '$school_Name',
-   '$level',
-   '$coach_Name',
-    '$coach_Email',
-   '$registration_timeStamp'
-   )";
+    '$UserName',
+    '$email',
+    '$school_Name',
+    '$level',
+    '$coach_Name',
+        '$coach_Email',
+    '$registration_timeStamp'
+    )";
     $res = $conn->query($query);
     if($res){
         $conn->close();
-        echo 1;
+        echo json_encode(array("status" => 1));
     }else{
-        echo 0 .'Error during the query: ' . $conn->error;
+        $conn->close();
+        echo json_encode(array("status" => 0, "error" => "Error during the query: " . $conn->error));
+
     }
 
 ?>

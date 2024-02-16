@@ -1,5 +1,5 @@
-<header class="bg-cover bg-center bg-gray-800 text-white text-center py-20" style="background-image: url('../../public/IMG1.jpg')>
-        <div class="container mx-auto>
+<header class="bg-cover bg-center bg-gray-800 text-white text-center py-20" style="background-image: url(../public/images/IMG2.png); background-size: cover; background-position: left bottom;">
+        <div class="container mx-auto">
             <h1 class="text-4xl font-bold mb-4">¿Quieres entrenar?</h1>
         </div>
     </header>
