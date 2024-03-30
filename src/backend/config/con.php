@@ -1,11 +1,11 @@
 <?php
 
 // *** Server dataBase ***
-   /* define("HOST",'45.79.19.252'); // DataBase Ipv4
+   define("HOST",'45.79.19.252'); // DataBase Ipv4
     define("BD",'OMRCH'); // Table name
     define("USER_BD",'root'); // Database Username
     define("PASS_BD",'TioGazpacho');
-   */
+   
 /*
 // *** localHost dataBase ***
     define("HOST",'localhost'); // DataBase Ipv4
