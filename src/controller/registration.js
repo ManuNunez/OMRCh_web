@@ -1,5 +1,4 @@
 function validateData(){
-    /*
     event.preventDefault();
     const form = document.getElementById('record');
     const formElements = form.elements;
@@ -10,8 +9,6 @@ function validateData(){
             return;
             }
         }
-    */
-
 
     sendForm();
 
@@ -48,11 +45,7 @@ function sendDataToTheServer(formData){
         type:"POST",
         data:formData,
         success:function (res){
-
-            console.log('respuesta php:' + res );
-            /*
             var checked = JSON.parse(res);
-
             console.log(checked.status);
             if(checked.status == 1){
                 window.location.href = '?section=user-registered';
@@ -62,7 +55,7 @@ function sendDataToTheServer(formData){
             }else{
                 alert('Error desconocido.');
             }
-            */
+
         },
         error:function (){
             alert('File not Found!'); // Este solo es cuando no encuentra el archivo

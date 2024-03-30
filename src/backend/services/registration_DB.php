@@ -1,6 +1,6 @@
 <?php
-    require '../config/con.php';
-    $conn = connection();
+include_once '../config/con.php';
+$conn = connection();
 $UserName = $_REQUEST['name'];
 $email = $_REQUEST['email'];
 $school_Name = $_REQUEST['school'];
@@ -10,18 +10,21 @@ $coach_Email = $_REQUEST['teacherEmail'];
 $registration_timeStamp = $_REQUEST['timestamp'];
 $sedeinput = $_REQUEST['campus'];
 
-//echo gettype($sedeinput);
-$query ="SELECT * FROM Sedes WHERE status = 1 AND sede_name = '$sedeinput'";
-$res = $conn->query($query);
-echo  $res->num_rows;
+function getSedeId($sedeinput,$conn){
+    $query ="SELECT id FROM Sedes WHERE status = 1 AND sede_name = '$sedeinput'";
+    $res = $conn->query($query);
+    if($res){
+        $row = $res->fetch_assoc();
+        return $row['id'];
+    }else{
+        return null;
+    }
 
-
-$conn->close();
-
-//$sedeIdArray = getSedeId($sedeinput,$conn);
+}
+$sedeIdArray = getSedeId($sedeinput,$conn);
 //echo $sedeIdArray;
-/*
-   $query = "INSERT INTO Participants(
+if($sedeIdArray != null){ // if the query that gets the id has any problem just return a null value and we dont do the insert!
+    $query = "INSERT INTO Participants(
    name,
    email,
    school,
@@ -41,14 +44,19 @@ $conn->close();
    '$registration_timeStamp',
    '$sedeIdArray'
    )";
-  $res = $conn->query($query);
-   if($res){
-       $conn->close();
-       echo json_encode(array("status" => 1));
-   }else{
-       $conn->close();
-       echo json_encode(array("status" => 0, "error" => "Error during the query: " . $conn->error));
+    $res = $conn->query($query);
+    if($res){
+        $conn->close();
+        echo json_encode(array("status" => 1));
+    }else{
+        $conn->close();
+        echo json_encode(array("status" => 0, "error" => "Error during the query: " . $conn->error));
 
-   }*/
+    }
+}else{
+    $conn->close();
+    echo json_encode(array("status" => 0, "error" => "Error during the query: " . "\$sedeIdArray is a null value!"));
+}
+
 
 ?>

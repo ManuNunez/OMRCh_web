@@ -1,5 +1,4 @@
 <?php
-    //include_once '/Users/alexisortiz/Developer/OMRCH/OMRCh_web/src/backend/services/return_sedes.php';
     include_once '../backend/services/return_sedes.php';
     $sedes = json_decode(getSedes(),true);
 ?>
@@ -59,14 +58,14 @@
                     <select id="campus" name="campus" class="mt-1 p-2 w-full border rounded-md" required>
                         <option value="1" selected>Selecciona</option>
                         <?php if(count($sedes) > 0 and !($sedes['status'])): ?>
-                        <?php $it =0; foreach ($sedes as $sede):?>
-                        <option value=" <?php echo $sede['locationName'];?> "> <?php echo $sede['locationName'];?> </option>
+                        <?php  foreach ($sedes as $sede):?>
+                        <option value="<?php echo $sede['locationName'];?>"> <?php echo $sede['locationName'];?> </option>
                         <?php endforeach; ?>
                         <?php elseif (count($sedes) <= 0 and $sedes['status'] == 0): ?>
                         <option value="0" >No hay sedes disponibles!</option>
                         <?php endif; ?>
                     </select>
-                </div
+                </div>
             </div>
 
             <div class="mb-4">

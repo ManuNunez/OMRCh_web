@@ -1,7 +1,5 @@
 <?php
 include_once '../backend/config/con.php';
-//include_once '/Users/alexisortiz/Developer/OMRCH/OMRCh_web/src/backend/config/con.php';
-
 //require '../config/con.php';
 
 function getSedes(){
