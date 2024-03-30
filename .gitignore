@@ -1,0 +1,7 @@
+./src/backend/config/con.php
+*.log
+*.sql
+*.sqlite
+src/backend/config/con.php
+src/backend/config/con.php
+src/backend/config/con.php

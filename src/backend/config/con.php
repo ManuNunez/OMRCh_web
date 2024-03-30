@@ -6,12 +6,12 @@
     define("USER_BD",'root'); // Database Username
     define("PASS_BD",'TioGazpacho');
    */
-
+/*
 // *** localHost dataBase ***
     define("HOST",'localhost'); // DataBase Ipv4
     define("BD",'OMRCH'); // Table name
     define("USER_BD",'root'); // Database Username
-    define("PASS_BD",'');
+    define("PASS_BD",'');*/
 
 function connection(){
         $con = new mysqli(HOST,USER_BD,PASS_BD,BD);
