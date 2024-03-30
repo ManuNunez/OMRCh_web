@@ -1,3 +1,10 @@
+<?php
+    //include_once '/Users/alexisortiz/Developer/OMRCH/OMRCh_web/src/backend/services/return_sedes.php';
+    include_once '../backend/services/return_sedes.php';
+    $sedes = json_decode(getSedes(),true);
+?>
+
+
 <div class="container mx-auto my-8">
     <h1 class="text-3xl font-bold mb-4">Cómo Inscribirse</h1>
 
@@ -36,6 +43,7 @@
                 <div class="mb-4">
                     <label for="level" class="block text-sm font-medium text-gray-700">Nivel</label>
                     <select id="level" name="level" class="mt-1 p-2 w-full border rounded-md" required>
+                        <option value="0" selected>Selecciona</option>
                         <option value="I">I hasta 5to de primaria</option>
                         <option value="II">II 6to de primaria</option>
                         <option value="III">III 1ro de secundaria</option>
@@ -44,16 +52,21 @@
                         <option value="VI">VI cualquier semestre de Preparatoria</option>
                     </select>
                 </div>
-
             </div>
             <div class="mb-4">
                 <div class="mb-4">
                     <label for="campus" class="block text-sm font-medium text-gray-700">Sede</label>
                     <select id="campus" name="campus" class="mt-1 p-2 w-full border rounded-md" required>
-                        <option value="example">Example</option>
+                        <option value="1" selected>Selecciona</option>
+                        <?php if(count($sedes) > 0 and !($sedes['status'])): ?>
+                        <?php $it =0; foreach ($sedes as $sede):?>
+                        <option value=" <?php echo $sede['locationName'];?> "> <?php echo $sede['locationName'];?> </option>
+                        <?php endforeach; ?>
+                        <?php elseif (count($sedes) <= 0 and $sedes['status'] == 0): ?>
+                        <option value="0" >No hay sedes disponibles!</option>
+                        <?php endif; ?>
                     </select>
-                </div>
-
+                </div
             </div>
 
             <div class="mb-4">
@@ -67,8 +80,8 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <button type="button" onclick="closeModal()" class="text-gray-500 mr-4">Cancelar</button>
-                <button type="button" onclick="validateData()" class="bg-blue-500 text-white px-4 py-2 rounded-md">Inscribirse</button>
+                <button type="button" onclick="closeModal();" class="text-gray-500 mr-4">Cancelar</button>
+                <button type="button" onclick="sendForm();return false" class="bg-blue-500 text-white px-4 py-2 rounded-md">Inscribirse</button>
             </div>
         </form>
     </div>

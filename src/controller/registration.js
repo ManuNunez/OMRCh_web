@@ -1,15 +1,17 @@
 function validateData(){
+    /*
     event.preventDefault();
     const form = document.getElementById('record');
     const formElements = form.elements;
-
-    for (let i = 0; i < formElements.length; i++) {
-        if (!formElements[i].checkValidity()) {
-        // Si algún campo no es válido, mostrar mensaje de error y salir de la función
-        alert('Por favor, complete todos los campos correctamente.');
-        return;
+        for (let i = 0; i < formElements.length; i++) {
+            if (!formElements[i].checkValidity()) {
+            // Si algún campo no es válido, mostrar mensaje de error y salir de la función
+            alert('Por favor, complete todos los campos correctamente.');
+            return;
+            }
         }
-    }
+    */
+
 
     sendForm();
 
@@ -24,22 +26,16 @@ function sendForm() {
     const level = getData('level');
     const teacherName = getData('teacherName');
     const teacherEmail = getData('teacherEmail');
-    const campus = getData('campus');
+    let campus = getData('campus'); // es necesario verficar que la sede no sea la opacion predeterminada del <select>
+
+
 
     // Obtener la marca de tiempo
     const timestamp = new Date().toISOString();
 
-    const formData = {
-            name: name,
-            email: email,
-            school: school,
-            level: level,
-            teacherName: teacherName,
-            teacherEmail: teacherEmail,
-            campus: campus,
-            timestamp: timestamp
-    }
-    console.log(formData.name + ", " + formData.timestamp);
+    const formData = {name,email,school,level,teacherName,teacherEmail,campus,timestamp}
+    console.log(campus);
+    console.log(formData.name + ", " + formData.timestamp + '/n');
     sendDataToTheServer(formData);
 
     
@@ -52,19 +48,21 @@ function sendDataToTheServer(formData){
         type:"POST",
         data:formData,
         success:function (res){
-            
-            var checked = JSON.parse(res); 
-            
+
+            console.log('respuesta php:' + res );
+            /*
+            var checked = JSON.parse(res);
+
             console.log(checked.status);
             if(checked.status == 1){
                 window.location.href = '?section=user-registered';
-            }else if(checked.error) { 
-                const errorMessage = checked.error; 
-                alert(errorMessage); 
+            }else if(checked.error) {
+                const errorMessage = checked.error;
+                alert(errorMessage);
             }else{
-                alert('Error desconocido.'); 
+                alert('Error desconocido.');
             }
-            
+            */
         },
         error:function (){
             alert('File not Found!'); // Este solo es cuando no encuentra el archivo
