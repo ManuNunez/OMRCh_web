@@ -5,7 +5,7 @@
     define("BD",'OMRCH'); // Table name
     define("USER_BD",'root'); // Database Username
     define("PASS_BD",'TioGazpacho');
-   
+
 /*
 // *** localHost dataBase ***
     define("HOST",'localhost'); // DataBase Ipv4
