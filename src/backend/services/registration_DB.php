@@ -35,6 +35,18 @@ function getSedeId($sedeinput,$conn){
     }
 
 }
+
+function getContestId($sede_id, $conn){
+    $query ="SELECT id FROM Contest WHERE status = 1 AND sede_id = '$sede_id'";
+    $res = $conn->query($query);
+    if($res){
+        $row = $res->fetch_assoc();
+        return $row['id'];
+    }else{
+        return null;
+    }
+
+}
 function insertStudents(array $student,$conn){
     try{
         $query =  "INSERT INTO Students (name, email, teacher_name, teacher_email) VALUES ('$student[username]', '$student[email]', '$student[coach_Name]', '$student[coach_Email]')";
@@ -47,7 +59,7 @@ function insertStudents(array $student,$conn){
 }
 function insertParticipants(array $student, $conn){
     try{
-        $query ="INSERT INTO Participants(name,email,school,competition_level,coach_name,coach_email,REGISTRATION_TIMESTAMP,participating_sede_id,student_id)VALUES('$student[username]','$student[email]','$student[school_Name]','$student[level]','$student[coach_Name]','$student[coach_Email]','$student[registration_timeStamp]','$student[sedeIdArray]','$student[studentId]')";
+        $query ="INSERT INTO Participants(name,email,school,competition_level,coach_name,coach_email,REGISTRATION_TIMESTAMP,participating_sede_id,student_id,contest_id)VALUES('$student[username]','$student[email]','$student[school_Name]','$student[level]','$student[coach_Name]','$student[coach_Email]','$student[registration_timeStamp]','$student[sedeIdArray]','$student[studentId]','$student[contestId]')";
         $res = $conn->query($query);
         return json_encode(array("status"=>"1" ));
     }
@@ -56,9 +68,11 @@ function insertParticipants(array $student, $conn){
     }
 }
 
-$student['sedeIdArray'] = getSedeId($student['sedeinput'],$conn); // query for the id from the sede selected
+$sede_id = getSedeId($student['sedeinput'],$conn);
+$student['sedeIdArray'] = $sede_id;// query for the id from the sede selected
 $inStASW = insertStudents($student,$conn); // insert to the table Students
 if($inStASW['status'] == "1"){
+    $student['contestId'] = getContestId($student['sedeIdArray'],$conn);
     $student['studentId'] = getStudentId($student['username'],$conn);
     $inPaAsw = insertParticipants($student,$conn);
     $inPaDe = json_decode($inPaAsw);
