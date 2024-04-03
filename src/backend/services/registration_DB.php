@@ -66,6 +66,7 @@ if($inStASW['status'] == "1"){
 }else{
     echo $inStASW;
 }
+$conn->close();
 
 
 
