@@ -45,7 +45,7 @@ function sendDataToTheServer(formData){
         type:"POST",
         data:formData,
         success:function (res){
-            /*var checked = JSON.parse(res);
+            var checked = JSON.parse(res);
             console.log(checked.status);
             if(checked.status == 1){
                 window.location.href = '?section=user-registered';
@@ -54,7 +54,7 @@ function sendDataToTheServer(formData){
                 alert(errorMessage);
             }else{
                 alert('Error desconocido.');
-            }*/
+            }
             console.log(res);
 
         },
