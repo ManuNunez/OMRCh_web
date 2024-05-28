@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="../view/resources/main.css">
 </head>
 
-<body class="font-sans bg-gray-100 flex flex-col min-h-screen">
+<body class="font-sans bg-white flex flex-col min-h-screen">
 
 	<?php
 	include('components/nav.php');
