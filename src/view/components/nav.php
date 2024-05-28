@@ -22,6 +22,7 @@
     <a href="?section=training" class="block p-2 text-white">Entrenamientos</a>
     <a href="?section=registration" class="block p-2 text-white">Cómo Participar</a>
     <a href="?section=trainingMaterial" class="block p-2 text-white">Material de Entrenamiento</a>
+  <a href="?section=login" class="block p-2 text-white">Inicio de Sesion</a>
   </div>
 </nav>
 <?php
