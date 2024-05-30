@@ -2,7 +2,7 @@
 
 // *** Server dataBase ***
    define("HOST",'45.79.19.252'); // DataBase Ipv4
-    define("BD",'OMRCH'); // Table name
+    define("BD",'omrch'); // Table name
     define("USER_BD",'root'); // Database Username
     define("PASS_BD",'TioGazpacho');
 

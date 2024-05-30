@@ -1,3 +1,8 @@
+
+<div class="flex justify-center">
+    <img src="resources/imgs/LogoOMRCHVector.svg " class="w-3/6">
+</div>
+
 <header class="bg-gray-800 text-white text-center py-20">
 		<div class="container mx-auto">
 			<h1 class="text-4xl font-bold mb-4">Desafiando Mentes, Transformando Futuros</h1>
