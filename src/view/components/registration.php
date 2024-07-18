@@ -34,6 +34,11 @@
             </div>
 
             <div class="mb-4">
+                <label for="curp" class="block text-sm font-medium text-gray-700">Curp</label>
+                <input type="text" id="curp" name="curp" class="mt-1 p-2 w-full border rounded-md" required>
+            </div>
+
+            <div class="mb-4">
                 <label for="school" class="block text-sm font-medium text-gray-700">Escuela</label>
                 <input type="text" id="school" name="school" class="mt-1 p-2 w-full border rounded-md" required>
             </div>

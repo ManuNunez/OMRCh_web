@@ -19,18 +19,19 @@ function sendForm() {
     const getData = (id) => document.getElementById(id).value;
     const name = getData('fullName');
     const email = getData('participantEmail');
+    const curp = getData('curp');
     const school = getData('school');
     const level = getData('level');
     const teacherName = getData('teacherName');
     const teacherEmail = getData('teacherEmail');
-    let campus = getData('campus'); // es necesario verficar que la sede no sea la opacion predeterminada del <select>
+    let campus = getData('campus'); // es necesario verficar que la sede no sea la opcion predeterminada del <select>
 
 
 
     // Obtener la marca de tiempo
     const timestamp = new Date().toISOString();
 
-    const formData = {name,email,school,level,teacherName,teacherEmail,campus,timestamp}
+    const formData = {name,email,curp,school,level,teacherName,teacherEmail,campus,timestamp}
     console.log(campus);
     console.log(formData.name + ", " + formData.timestamp + '/n');
     sendDataToTheServer(formData);
