@@ -39,7 +39,7 @@
 
 <?php
   $section = isset($_GET['section']) ? $_GET['section'] : '';
-  echo $section;
+  // echo $section;
 ?>
 
 <header class="bg-white ">
