@@ -5,13 +5,8 @@ $student = array( //values requested
     "username" => $_REQUEST['name'],
     "email" => $_REQUEST['email'],
     "curp" => $_REQUEST['curp'],
-    "school_Name" => $_REQUEST['school'],
-    "level" => $_REQUEST['level'],
     "coach_Name" => $_REQUEST['teacherName'],
-    "coach_Email" => $_REQUEST['teacherEmail'],
-    "registration_timeStamp" => $_REQUEST['timestamp'],
-    "sedeinput" => $_REQUEST['campus']
-    // nos falta sede sedeidarray
+    "coach_Email" => $_REQUEST['teacherEmail']
 );
 function getStudentId($studentName,$conn){
     try{
@@ -58,9 +53,9 @@ function insertStudents(array $student,$conn){
         return array("status"=>"0","error"=>"Error during the insertStudent function");
     }
 }
-function insertParticipants(array $student, $conn) {
+function createStudent(array $student, $conn) {
     try {
-        $query = "INSERT INTO Participants(name, email, curp, school, competition_level, coach_name, coach_email, REGISTRATION_TIMESTAMP, participating_sede_id)
+        $query = "INSERT INTO Participants(name, email, curp, coach_name, coach_email)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
         $stmt = $conn->prepare($query);
@@ -70,16 +65,12 @@ function insertParticipants(array $student, $conn) {
         }
         
         $stmt->bind_param(
-            "ssssssssi",                       // Tipos de datos (s para string, i para integer)
+            "sssss",                       // Tipos de datos (s para string, i para integer)
             $student['username'],
             $student['email'],
             $student['curp'],
-            $student['school_Name'],
-            $student['level'],
             $student['coach_Name'],
             $student['coach_Email'],
-            $student['registration_timeStamp'],
-            $student['sede_id']
         );
         
         $stmt->execute();
@@ -96,7 +87,6 @@ function insertParticipants(array $student, $conn) {
 }
 
 
-$student["sede_id"] = getSedeId($student['sedeinput'],$conn);
 $res = insertParticipants($student, $conn);
 echo $res;
 // $student['sedeIdArray'] = $sede_id;// query for the id from the sede selected

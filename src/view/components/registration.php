@@ -1,6 +1,6 @@
 <?php
-    include_once '../backend/services/return_sedes.php';
-    $sedes = json_decode(getSedes(),true);
+    // include_once '../backend/services/return_sedes.php';
+    // $sedes = json_decode(getSedes(),true);
 ?>
 
 
@@ -43,7 +43,7 @@
                 <input type="text" id="school" name="school" class="mt-1 p-2 w-full border rounded-md" required>
             </div>
 
-            <div class="mb-4">
+            <!-- <div class="mb-4">
                 <div class="mb-4">
                     <label for="level" class="block text-sm font-medium text-gray-700">Nivel</label>
                     <select id="level" name="level" class="mt-1 p-2 w-full border rounded-md" required>
@@ -56,8 +56,8 @@
                         <option value="VI">VI cualquier semestre de Preparatoria</option>
                     </select>
                 </div>
-            </div>
-            <div class="mb-4">
+            </div> -->
+            <!-- <div class="mb-4">
                 <div class="mb-4">
                     <label for="campus" class="block text-sm font-medium text-gray-700">Sede</label>
                     <select id="campus" name="campus" class="mt-1 p-2 w-full border rounded-md" required>
@@ -71,7 +71,7 @@
                         <?php endif; ?>
                     </select>
                 </div>
-            </div>
+            </div> -->
 
             <div class="mb-4">
                 <label for="teacherName" class="block text-sm font-medium text-gray-700">Nombre del Profesor</label>
