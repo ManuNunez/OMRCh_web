@@ -66,6 +66,8 @@ function createStudent(array $student, $conn) {
             throw new Exception("Invalid input data");
         }
 
+        $hash = password_hash($curp, PASSWORD_BCRYPT);
+
         $query = "INSERT INTO students (name, email, curp, teacher_name, teacher_email, username, password)
                     VALUES (:name, :email, :curp, :teacher_name, :teacher_email, :username, :password)";
 
@@ -82,7 +84,7 @@ function createStudent(array $student, $conn) {
         $stmt->bindValue(':teacher_name', $coach_name);
         $stmt->bindValue(':teacher_email', $coach_email);
         $stmt->bindValue(':username', $curp);
-        $stmt->bindValue(':password', $curp);
+        $stmt->bindValue(':password', $hash);
 
         $stmt->execute();
 

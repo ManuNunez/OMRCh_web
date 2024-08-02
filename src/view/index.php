@@ -11,13 +11,13 @@
 <body class="font-sans bg-white flex flex-col min-h-screen">
 
 	<?php
-	include('components/nav.php');
+		include('components/nav.php');
 
 	?>
 
 
 	<?php
-	include('components/footer.php');
+		include('components/footer.php');
 	?>
 	<!-- <script src="resources/js/nav_btn.js"></script> -->
     <script src="resources/js/jquery-3.3.1.min.js"></script>
