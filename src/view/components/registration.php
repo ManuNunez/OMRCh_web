@@ -14,8 +14,7 @@
         <li>Espera la confirmación por correo electrónico.</li>
     </ol>
 
-    <button onclick="openModal()" class="bg-blue-500 text-white px-4 py-2 rounded-md mt-4">Inscribirse a la
-        Olimpiada</button>
+    <button onclick="openModal()" class="bg-blue-500 text-white px-4 py-2 rounded-md mt-4">Inscribirse a la Olimpiada</button>
 </div>
 
 <div id="registrationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center">
@@ -38,10 +37,10 @@
                 <input type="text" id="curp" name="curp" class="mt-1 p-2 w-full border rounded-md" required>
             </div>
 
-            <div class="mb-4">
+            <!-- <div class="mb-4">
                 <label for="school" class="block text-sm font-medium text-gray-700">Escuela</label>
                 <input type="text" id="school" name="school" class="mt-1 p-2 w-full border rounded-md" required>
-            </div>
+            </div> -->
 
             <!-- <div class="mb-4">
                 <div class="mb-4">
@@ -62,13 +61,13 @@
                     <label for="campus" class="block text-sm font-medium text-gray-700">Sede</label>
                     <select id="campus" name="campus" class="mt-1 p-2 w-full border rounded-md" required>
                         <option value="1" selected>Selecciona</option>
-                        <?php if(count($sedes) > 0 and !($sedes['status'])): ?>
-                        <?php  foreach ($sedes as $sede):?>
-                        <option value="<?php echo $sede['locationName'];?>"> <?php echo $sede['locationName'];?> </option>
-                        <?php endforeach; ?>
-                        <?php elseif (count($sedes) <= 0 and $sedes['status'] == 0): ?>
+                        <?//php if(count($sedes) > 0 and !($sedes['status'])): ?>
+                        <?php //  foreach ($sedes as $sede):?>
+                        <option value="<?php //echo $sede['locationName'];?>"> <?php //echo $sede['locationName'];?> </option>
+                        <?php //endforeach; ?>
+                        <?php// elseif (count($sedes) <= 0 and $sedes['status'] == 0): ?>
                         <option value="0" >No hay sedes disponibles!</option>
-                        <?php endif; ?>
+                        <?php// endif; ?>
                     </select>
                 </div>
             </div> -->

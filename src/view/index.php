@@ -19,7 +19,7 @@
 	<?php
 	include('components/footer.php');
 	?>
-	<script src="resources/js/nav_btn.js"></script>
+	<!-- <script src="resources/js/nav_btn.js"></script> -->
     <script src="resources/js/jquery-3.3.1.min.js"></script>
 </body>
 

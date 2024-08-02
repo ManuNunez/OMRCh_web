@@ -39,7 +39,8 @@ function sendDataToTheServer(formData){
         type:"POST",
         data:formData,
         success:function (res){
-            var checked = JSON.parse(res);
+            console.log(res);
+            const checked = JSON.parse(res);
             console.log(checked.status);
             if(checked.status == 1){
                 console.log('User registered success.')
