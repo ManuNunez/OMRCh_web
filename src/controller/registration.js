@@ -1,4 +1,4 @@
-function validateData(){
+function validateData(event){
     event.preventDefault();
     const form = document.getElementById('record');
     const formElements = form.elements;
@@ -20,20 +20,13 @@ function sendForm() {
     const name = getData('fullName');
     const email = getData('participantEmail');
     const curp = getData('curp');
-    const school = getData('school');
-    const level = getData('level');
     const teacherName = getData('teacherName');
     const teacherEmail = getData('teacherEmail');
-    let campus = getData('campus'); // es necesario verficar que la sede no sea la opcion predeterminada del <select>
 
 
 
-    // Obtener la marca de tiempo
-    const timestamp = new Date().toISOString();
-
-    const formData = {name,email,curp,school,level,teacherName,teacherEmail,campus,timestamp}
-    console.log(campus);
-    console.log(formData.name + ", " + formData.timestamp + '/n');
+    const formData = {name,email,curp,teacherName,teacherEmail}
+    
     sendDataToTheServer(formData);
 
     
@@ -49,6 +42,7 @@ function sendDataToTheServer(formData){
             var checked = JSON.parse(res);
             console.log(checked.status);
             if(checked.status == 1){
+                console.log('User registered success.')
                 window.location.href = '?section=user-registered';
             }else if(checked.error) {
                 const errorMessage = checked.error;
