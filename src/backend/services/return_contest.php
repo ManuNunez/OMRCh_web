@@ -1,14 +1,10 @@
 <?php
-//include_once '../config/con.php';
-include_once 'config/con.php';
+require_once '../backend/config/con.php';
 $conn = connection();
 
-$students = array();
-function returnContest(array $students, $conn) {
+function returnContest($conn) {
     try {
-
-        $query = "INSERT ";
-
+        $query = "SELECT * FROM contests";
         $stmt = $conn->prepare($query);
 
         if ($stmt === false) {
@@ -21,17 +17,20 @@ function returnContest(array $students, $conn) {
             throw new Exception("Failed to execute statement: " . $stmt->errorInfo()[2]);
         }
 
-        return json_encode(array("status" => "1"));
+        // Obtener todos los resultados en un array
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        // Devolver los resultados como JSON
+        return json_encode(['status' => '1', 'data' => $data]);
+        
     } catch (PDOException $e) {
         return json_encode(array("status" => "0", "error" => $e->getMessage(), "line" => $e->getLine()));
     } catch (Exception $e) {
         return json_encode(array("status" => "0", "error" => $e->getMessage(), "line" => $e->getLine()));
+    } finally {
+        $con = null;
     }
+}
 
-};
-
-$res = returnContest($student, $conn);
-echo $res;
-$conn = null;
 
 ?>

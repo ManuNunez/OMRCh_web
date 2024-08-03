@@ -32,7 +32,7 @@ function sendForm() {
             console.log(checked.status);
             if(checked.status == 1){
                 console.log('User registered success.')
-                window.location.href = '?section=user-registered';
+                window.location.href = '?section=contest';
             }else if(checked.error) {
                 const errorMessage = checked.error;
                 alert(errorMessage);
