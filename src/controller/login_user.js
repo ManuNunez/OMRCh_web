@@ -24,7 +24,7 @@ function sendForm() {
     };
     $.ajax({
         url:"../backend/services/login_user.php",
-        type:"GET",
+        type:"POST",
         data:formData,
         success:function (res){
             console.log(res);
