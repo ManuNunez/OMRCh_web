@@ -5,9 +5,11 @@ function contentSelector($section) {
     if (in_array($section, $allowedSections)) {
         $filename ='components/' . $section . '.php';
     } else {
-        $filename = 'defaultContent.php';
+        $filename = 'index.php';
     }
+    echo $filename;
 
     include_once $filename;
 }
-?>
+
+
