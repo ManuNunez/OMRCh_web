@@ -55,7 +55,7 @@
                     ';
                 }else{
                     echo '
-                        <a href="#" class="">
+                        <a href="?section=index" class="">
                         <span class="sr-only">OMRCH</span>
                         <img class="h-16 my-3" src="resources/imgs/LogoOMRCHVector.svg" alt="">
                         </a>
@@ -68,11 +68,12 @@
         <div class="hidden  lg:flex lg:gap-x-1  m-auto w-full justify-center    lg:text-lg ">
             <?php
                 
-              echo '<a href="?section=training"       class="  py-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-lg  '; if($section == "training") echo "text-blue-500 font-bold hover:text-blue-500 "; else echo " text-gray-600"; echo ' ">Entrenamientos</a>';
-              echo '<a href="?section=registration"        class="  py-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-lg  '; if($section == "registration") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600"; echo '">Como participar</a>';
-              echo '<a href="?section=trainingMaterial"          class="  py-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-lg '; if($section == "trainingMaterial") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600"; echo '">Material de Entrenamiento</a>';
-              echo '<a href="?section=login"           class="  py-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-lg '; if($section == "login") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600"; echo '">Iniciar de sesión</a>';
-                    
+              echo '<a href="?section=training"         class="  my-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl  '; if($section == "training") echo "text-blue-500 font-bold hover:text-blue-500 "; else echo " text-gray-600"; echo ' ">Entrenamientos</a>';
+              echo '<a href="?section=registration"     class="  my-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl  '; if($section == "registration") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600"; echo '">Como participar</a>';
+              echo '<a href="?section=trainingMaterial" class="  my-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl '; if($section == "trainingMaterial") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600"; echo '">Material de Entrenamiento</a>';
+              echo '<a href="?section=login"            class="  my-4   p-2 px-3 mb-2 leading-6 bg-blue-500 rounded-2xl  ' ; if($section == "login") echo " font-bold  text-white "; else echo " text-white"; echo '">Iniciar sesión</a>';
+             echo '<a href="?section=sign-up"           class="  my-4   p-2 px-3 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl  hover:border-2 hover:border-black  '; if($section == "sign-up") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600"; echo '">Registrarte</a>';
+
                 
             ?>
         </div>
@@ -107,10 +108,10 @@
         <div class="fixed inset-0 z-10"></div>
         <div  class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div id="" class="flex items-center justify-between">
-                <a href="index.php" class="-m-1.5 p-1.5">
+                <a href="?section=training" class="-m-1.5 p-1.5">
                     <span class="sr-only">OMRCH</span>
                     <img class="h-16 w-auto" src="resources/imgs/LogoOMRCHVector.svg" >
-                </a>
+                </a>ss
                 <button id="closeMenuBtn"  type="button" class="rounded-md p-2.5 text-gray-700">
                     <span class="sr-only">Close menu</span>
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -127,7 +128,6 @@
                           echo '<a href="?section=registration"        class="  block  py-2   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-lg  '; if($section == "registration") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600"; echo '">Como participar</a>';
                           echo '<a href="?section=trainingMaterial"          class="block  py-2   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-lg'; if($section == "trainingMaterial") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600"; echo '">Material de Entrenamiento</a>';
                           echo '<a href="?section=login"           class="block  py-2   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-lg'; if($section == "login") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600"; echo '">Iniciar de sesión</a>';
-
                         ?>
                     </div>
                     <?php
