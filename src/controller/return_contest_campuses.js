@@ -1,3 +1,5 @@
+import { handleFormSubmit, checkCCT } from "./register_student_in_contest.js";
+
 document.addEventListener('DOMContentLoaded', async () => {
 
     const fetchContestCampuses = async () => {
@@ -37,6 +39,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             campusSelect.appendChild(option);
         });
         modal.classList.remove('hidden');
+
+        const form = document.getElementById('inscripcionForm');
+        form.addEventListener('submit', (event) => handleFormSubmit(contestId, event));
     }
 
     function closeModal(modal) {

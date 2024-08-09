@@ -1,4 +1,4 @@
-function validateData() {
+function validateData(event) {
     event.preventDefault();
 
     const form = document.getElementById('record');
@@ -6,44 +6,46 @@ function validateData() {
 
     for (let i = 0; i < formElements.length; i++) {
         if (!formElements[i].checkValidity()) {
-        // Si algún campo no es válido, mostrar mensaje de error y salir de la función
-        alert('Por favor, complete todos los campos correctamente.');
-        return;
+            // Si algún campo no es válido, mostrar mensaje de error y salir de la función
+            alert('Por favor, complete todos los campos correctamente.');
+            return;
         }
     }
 
     sendForm();
 }
 
-function sendForm() {
-    const username = $('#username').val();
-    const password = $('#password').val();
-    const formData = {
-        username,
-        password
-    };
-    $.ajax({
-        url:"../backend/services/login_user.php",
-        type:"POST",
-        data:formData,
-        success:function (res){
-            console.log(res);
-            const checked = JSON.parse(res);
-            console.log(checked.status);
-            if(checked.status == 1){
-                console.log('User registered success.')
-                window.location.href = '?section=contest';
-            }else if(checked.error) {
-                const errorMessage = checked.error;
-                alert(errorMessage);
-            }else{
-                alert('Error desconocido.');
-            }
-            console.log(res);
+const sendForm = async () => {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const formData = new URLSearchParams();
+    formData.append('username', username);
+    formData.append('password', password);
 
-        },
-        error:function (){
-            alert('File not Found!'); // Este solo es cuando no encuentra el archivo
+    try {
+        const response = await fetch('../backend/services/login_user.php', {
+            method: 'POST',
+            body: formData,
+            credentials: 'include' // Incluye las credenciales en la solicitud
+        });
+
+        if (!response.ok) {
+            throw new Error('File not Found!');
         }
-    });
+
+        const res = await response.json();
+        console.log(res);
+
+        if (res.status == 1) {
+            console.log('User logged.');
+            window.location.href = '?section=contest';
+        } else if (res.error) {
+            const errorMessage = res.error;
+            alert(errorMessage);
+        } else {
+            alert('Error desconocido.');
+        }
+    } catch (error) {
+        alert(error.message); // Mensaje de error si no se encuentra el archivo
+    }
 }

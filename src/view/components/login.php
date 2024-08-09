@@ -30,7 +30,7 @@
 
             <div class="flex justify-between">
                 <a class="text-xs text-blue-500 pt-7 ">Recuperar Contraseña</a>
-                <button type="button" onclick="validateData()" class="bg-blue-500 text-white py-2 px-4 rounded mt-4">Iniciar Sesión</button>
+                <button type="button" onclick="validateData(event)" class="bg-blue-500 text-white py-2 px-4 rounded mt-4">Iniciar Sesión</button>
             </div>
         </form>
     </div>

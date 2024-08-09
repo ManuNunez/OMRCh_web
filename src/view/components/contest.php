@@ -3,6 +3,7 @@
     $contests = json_decode(returnContest($conn), true);
 ?>
 
+
 <div class="border p-4">
     <div class="flex justify-between items-center mb-4">
         <h2 class="text-2xl font-bold hover:text-blue-400 hover:underline text-blue-500">
@@ -64,21 +65,24 @@
             <h2 id="modalTitle" class="text-2xl font-bold mb-4">Inscribirme</h2>
             <form id="inscripcionForm" method="POST">
                 
-                <label for="nombreProfesor" class="block text-sm font-medium text-gray-700 mt-4">Nombre de tu profesor:</label>
-                <input type="text" id="nombreProfesor" name="nombreProfesor" class="mt-1 p-2 border rounded-md w-full text-black" required>
+                <label for="coachName" class="block text-sm font-medium text-gray-700 mt-4">Nombre de tu profesor:</label>
+                <input type="text" id="coachName" name="coachName" class="mt-1 p-2 border rounded-md w-full text-black" required>
 
                 
-                <label for="correoProfesor" class="block text-sm font-medium text-gray-700 mt-4">Correo de tu profesor:</label>
-                <input type="email" id="correoProfesor" name="correoProfesor" class="mt-1 p-2 border rounded-md w-full text-black" required>
+                <label for="coachEmail" class="block text-sm font-medium text-gray-700 mt-4">Correo de tu profesor:</label>
+                <input type="email" id="coachEmail" name="coachEmail" class="mt-1 p-2 border rounded-md w-full text-black" required>
+
+                <label for="school" class="block text-sm font-medium text-gray-700 mt-4">CCT de tu Escuela:</label>
+                <input type="text" id="school" name="school" class="mt-1 p-2 border rounded-md w-full text-black" required>
                 
-                <label for="campusSelect" class="block text-sm font-medium text-gray-700">Selecciona un campus:</label>
+                <label for="campusSelect" class="block text-sm font-medium text-gray-700 mt-4">Selecciona un campus:</label>
                 <select id="campusSelect" name="campus" class="mt-1 p-2 border rounded-md w-full text-black">
                     <!-- Opciones dinámicas -->
                 </select>
                 
                 <!-- Select para nivel -->
-                <label for="nivelSelect" class="block text-sm font-medium text-gray-700 mt-4">Selecciona un nivel:</label>
-                <select id="nivelSelect" name="nivel" class="mt-1 p-2 border rounded-md w-full text-black">
+                <label for="levelSelect" class="block text-sm font-medium text-gray-700 mt-4">Selecciona un nivel:</label>
+                <select id="levelSelect" name="levelSelect" class="mt-1 p-2 border rounded-md w-full text-black">
                     <option value="1">Nivel 1 (1 - 5 de Primaria)</option>
                     <option value="2">Nivel 2 (6 de Primaria)</option>
                     <option value="3">Nivel 3 (1 de Secundaria)</option>
@@ -90,7 +94,7 @@
                 </select>
 
                 <div class="mt-4">
-                    <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded">Guardar</button>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Registrarme</button>
                     <button type="button" onclick="closeModal()" class="ml-2 text-gray-600">Regresar</button>
                 </div>
             </form>
@@ -100,4 +104,4 @@
 
 
 
-<script src="../controller/return_contest_campuses.js"></script>
+<script type="module" src="../controller/return_contest_campuses.js"></script>
