@@ -1,11 +1,12 @@
 <?php
 function contentSelector($section) {
-    $allowedSections = ['index','training', 'registration', 'login', 'user-registered','contest'];
+    $allowedSections = ['index','training', 'registration', 'login', 'user-registered','contest','sign-up'];
     
     if (in_array($section, $allowedSections)) {
         $filename ='components/' . $section . '.php';
+        //echo $filename;
     } else {
-        $filename = 'index.php';
+        $filename = 'not-permited.php';
     }
 
 
