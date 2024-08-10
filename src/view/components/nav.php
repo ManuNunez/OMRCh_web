@@ -38,8 +38,14 @@
 </head>
 
 <?php
-  $section = isset($_GET['section']) ? $_GET['section'] : '';
-  // echo $section;
+    $section = isset($_GET['section']) ? $_GET['section'] : '';
+    $exception = ['sign-up'];
+    $flag = false;
+    if ( in_array($section, $exception)) { // verificamos la bandera
+        $flag =true;
+    }
+    if(!($flag)):
+
 ?>
 
 <header class="bg-white ">
@@ -148,15 +154,12 @@
 
 </header>
 
+<?php endif; ?>
+
 
 
 <?php
-
 include_once 'selector.php';
-
-
-
-
 if (function_exists('contentSelector')) {
     contentSelector($section);
 } else {
