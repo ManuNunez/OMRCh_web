@@ -46,7 +46,11 @@
                         <div class="text-sm text-gray-900"><?php echo htmlspecialchars($contest['duration_minutes'], ENT_QUOTES, 'UTF-8'); ?> minutos</div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <button class="text-blue-500" onclick="openModal(<?php echo $contest['id']; ?>)">Inscribirme</button>
+                        <?php if ($contest['participation_id']): ?>
+                            <button class="text-green-500" disabled>Inscrito</button>
+                        <?php else: ?>
+                            <button class="text-blue-500" onclick="openModal(<?php echo $contest['id']; ?>)">Inscribirme</button>
+                        <?php endif; ?>                    
                     </td>
                 </tr>
             <?php endforeach; ?>

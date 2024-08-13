@@ -36,10 +36,10 @@ export const handleFormSubmit = async (contestId, event) => {
         alert('El CCT de la escuela no es válido. Por favor, verifica el CCT e intenta nuevamente.');
         return;
     } else {
-        // console.log(isCCTValid)
+        console.log(isCCTValid)
         data.schoolId = isCCTValid.id;
     }
-    // console.log(data);
+    console.log(data);
     
     try {
         const response = await fetch('../backend/services/register_student_in_contest.php', {
@@ -50,7 +50,7 @@ export const handleFormSubmit = async (contestId, event) => {
         const result = await response.json();
 
 
-        // console.log(result);
+        console.log(result);
 
         if (result.status === '1') {
             alert('Registro exitoso');
