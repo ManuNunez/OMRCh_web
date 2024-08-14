@@ -47,7 +47,7 @@
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
                         <?php if ($contest['participation_id']): ?>
-                            <button class="text-green-500" disabled>Inscrito</button>
+                            <div class="text-green-500">Inscrito</div>
                         <?php else: ?>
                             <button class="text-blue-500" onclick="openModal(<?php echo $contest['id']; ?>)">Inscribirme</button>
                         <?php endif; ?>                    
