@@ -33,31 +33,26 @@ function sendForm() {
 }
 
 
-function sendDataToTheServer(formData){
-    $.ajax({
-        url:"../backend/services/registration_DB.php",
-        type:"POST",
-        data:formData,
-        success:function (res){
-            console.log(res);
-            const checked = JSON.parse(res);
-            console.log(checked.status);
-            if(checked.status == 1){
-                console.log('User registered success.')
-                window.location.href = '?section=user-registered';
-            }else if(checked.error) {
-                const errorMessage = checked.error;
-                alert(errorMessage);
-            }else{
-                alert('Error desconocido.');
-            }
-            console.log(res);
-
-        },
-        error:function (){
-            alert('File not Found!'); // Este solo es cuando no encuentra el archivo
+function sendDataToTheServer(formData) {
+    fetch("../backend/services/registration_DB.php", {
+        method: "POST",
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(res => {
+        console.log(res);
+        if (res.status == 1) {
+            console.log('User registered successfully.');
+            window.location.href = '?section=user-registered';
+        } else if (res.error) {
+            const errorMessage = res.error;
+            alert(errorMessage);
+        } else {
+            alert('Error desconocido.');
         }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('File not found!');
     });
-
-
 }
