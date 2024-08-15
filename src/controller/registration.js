@@ -1,4 +1,4 @@
-function validateData(event){
+function validateData(){
     event.preventDefault();
     const form = document.getElementById('record');
     const formElements = form.elements;
@@ -36,11 +36,11 @@ function sendForm() {
 function sendDataToTheServer(formData) {
     fetch("../backend/services/registration_DB.php", {
         method: "POST",
-        body: formData,
+        body: new URLSearchParams(formData),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     })
     .then(response => response.json())
     .then(res => {
-        console.log(res);
         if (res.status == 1) {
             console.log('User registered successfully.');
             window.location.href = '?section=user-registered';
