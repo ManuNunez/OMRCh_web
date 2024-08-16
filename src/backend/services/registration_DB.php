@@ -11,10 +11,10 @@ $student = array( //values requested
 function createStudent(array $student, $conn) {
     try {
         // Validar y sanear entradas
-        $username = filter_var($student['username'], FILTER_SANITIZE_STRING);
+        $username = filter_var($student['username'], FILTER_SANITIZE_SPECIAL_CHARS);
         $email = filter_var($student['email'], FILTER_VALIDATE_EMAIL);
-        $curp = filter_var($student['curp'], FILTER_SANITIZE_STRING);
-        $coach_name = filter_var($student['coach_name'], FILTER_SANITIZE_STRING);
+        $curp = filter_var($student['curp'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $coach_name = filter_var($student['coach_name'], FILTER_SANITIZE_SPECIAL_CHARS);
         $coach_email = filter_var($student['coach_email'], FILTER_VALIDATE_EMAIL);
 
         if (!$username || !$email || !$curp || !$coach_name || !$coach_email) {

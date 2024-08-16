@@ -20,7 +20,7 @@
 
 	<?php
     $section = isset($_GET['section']) ? $_GET['section'] : '';
-    $exception = ['sign-up'];
+    $exception = [];
     if ( !(in_array($section, $exception))) { // verificamos la bandera
         include('components/footer.php');
     }

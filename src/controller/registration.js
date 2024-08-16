@@ -32,9 +32,8 @@ function sendForm() {
     
 }
 
-
 function sendDataToTheServer(formData) {
-    fetch("../backend/services/registration_DB.php", {
+    fetch("./../backend/services/registration_DB.php", {
         method: "POST",
         body: new URLSearchParams(formData),
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }

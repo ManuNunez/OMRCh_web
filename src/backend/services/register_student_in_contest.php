@@ -25,7 +25,7 @@ $student = array(
 function registerStudent(array $student, $conn) {
     try {
         // Validar y sanear entradas
-        $coach_name = filter_var($student['coach_name'], FILTER_SANITIZE_STRING);
+        $coach_name = filter_var($student['coach_name'], FILTER_SANITIZE_SPECIAL_CHARS);
         $coach_email = filter_var($student['coach_email'], FILTER_VALIDATE_EMAIL);
 
         if (!$coach_name || !$coach_email) {
