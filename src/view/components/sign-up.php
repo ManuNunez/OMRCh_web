@@ -1,6 +1,7 @@
 <head>
     <link href="resources/main.css" rel="stylesheet">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="resources/js/jquery-3.3.1.min.js"></script>
     <script src="resources/js/NavToggle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
@@ -9,26 +10,25 @@
 </head>
 <body>
 
-    <header class="bg-white">
+    <header class="bg-white mb-5">
         <nav class=" flex justify-between px-2" aria-label="Global">
             <div class="flex">
                 <a href="?section=index" class="">
                     <span class="sr-only">OMRCH</span>
-                    <img class="h-16 my-3" src="resources/imgs/LogoOMRCHVector.svg" alt="">
+                    <img class="sm:h-24 sm:mt-2 lg:h-28 md:h-28 " src="resources/imgs/LogoOMRCHVector.svg" alt="">
                 </a>
             </div>
-            <div class="flex m-auto w-full justify-end text-lg mx-3">
-                <p class="my-4 p-1 mb-2 leading-6  text-gray-400 ">Ya tienes cuenta?</p>
-                <a class="my-4 p-1 mb-2 leading-6 text-blue-500 hover:underline hover:text-blue-700" href="?section=login">Iniciar sesión</a>
+            <div class="flex m-auto w-full justify-end lg:text-lg md:text-lg sm:text-xs mx-3">
+                <p class="my-4 p-1 mb-2 lg:leading-6 sm:leading-8  text-gray-400 ">Ya tienes cuenta?</p>
+                <a class="my-4 p-1 mb-2 lg:leading-6 sm:leading-8 text-blue-500 hover:underline hover:text-blue-700" href="?section=login">Iniciar sesión</a>
             </div>
         </nav>
-        <hr class="border-gray-300">
+        <hr class="border-gray-300 sm:-mt-3.5">
     </header>
 
-    <div class="my-auto mx-auto  ">
-        <div class="inline-flex container my-auto place-content-center ">
-
-            <div class="w-2/4 space-y-5">
+    <div class= "mx-auto my-auto">
+        <div class="lg:inline-flex  md:inline-flex container place-content-center ">
+            <div class="lg:w-2/4 md:w-2/4 sm:w-full lg:space-y-5 sm:space-y-2 ">
                 <div class="container my-auto place-content-center  ">
                     <p class="font-extrabold text-5xl text-center ">Únete a la Competencia</p>
                 </div>
@@ -62,36 +62,36 @@
                 </div>
 
             </div>
-            <div class=" ">
-                <form class="w-64 ">
+            <div class="sm:mb-24 lg:mt-20 md:mt-20">
+                <form class="lg:w-64 md:w-64 sm:w-full">
                     <div class="w-full">
                         <div class="relative my-3 ">
                             <input type="text"  id="name" name="name" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
-                            <label for="name" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Nombre</label>
+                            <label for="name" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2  origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Nombre</label>
                         </div>
                         <div class="relative my-3">
                             <input type="email"  id="email" name="email" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
-                            <label for="email" class="absolute text-sm text-gray-500  duration-300 mx-1  transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Correo Electrónico</label>
+                            <label for="email" class="absolute text-sm text-gray-500  duration-300 mx-1  transform -translate-y-4 scale-75 top-2  origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Correo Electrónico</label>
                         </div>
                         <div class="relative my-3">
                             <input type="text"  id="curp" name="curp" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
-                            <label for="curp" class="absolute text-sm text-gray-500  duration-300  mx-1  transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Curp</label>
+                            <label for="curp" class="absolute text-sm text-gray-500  duration-300  mx-1  transform -translate-y-4 scale-75 top-2  origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Curp</label>
                         </div>
                         <div class="relative my-3">
                             <input type="text"  id="responsiveName" name="responsiveName" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
-                            <label for="responsiveName" class="absolute text-sm text-gray-500   mx-1  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Nombre del Profesor/a</label>
+                            <label for="responsiveName" class="absolute text-sm text-gray-500   mx-1  duration-300 transform -translate-y-4 scale-75 top-2  origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Nombre del Profesor/a</label>
                         </div>
                         <div class="relative my-3 ">
                             <input  type="text"  id="responsiveEmail" name="responsiveEmail" class="block px-3 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
-                            <label for="responsiveEmail" class="absolute text-sm text-gray-500 mx-1 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Correo Electrónico del Profesor/a</label>
+                            <label for="responsiveEmail" class="absolute text-sm text-gray-500 mx-1 duration-300 transform -translate-y-4 scale-75 top-2 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Correo Electrónico del Profesor/a</label>
                         </div>
 
-                        <div class="relative my-3 ">
+                        <div class="relative mt-3 ">
                             <input type="password"  id="pass" name="pass" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
-                            <label for="pass" class="absolute text-sm text-gray-500 mx-1 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Contraseña</label>
+                            <label for="pass" class="absolute text-sm text-gray-500 mx-1 duration-300 transform -translate-y-4 scale-75 top-2  origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Contraseña</label>
                         </div>
-                        <div class="inline-flex my-3 relative w-full">
-                            <button  class="bg-blue-500 p-2 rounded hover:bg-blue-300 w-full">Registrarte</button>
+                        <div class="inline-flex mt-4 relative w-full">
+                            <button type="submit"  class="bg-blue-500 p-2 rounded hover:bg-blue-400 w-full text-lg text-white hover:text-black">Registrarte</button>
                         </div>
                         <div class="m-1 relative ">
                             <input type="checkbox" name="terms" id="terms">
