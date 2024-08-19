@@ -12,10 +12,10 @@
 
     <header class="bg-white mb-5">
         <nav class=" flex justify-between px-2" aria-label="Global">
-            <div class="flex">
+            <div class="w-36 mx-auto my-auto">
                 <a href="?section=index" class="">
                     <span class="sr-only">OMRCH</span>
-                    <img class="sm:h-24 sm:mt-2 lg:h-28 md:h-28 " src="resources/imgs/LogoOMRCHVector.svg" alt="">
+                    <img class="w-full" src="resources/imgs/LogoOMRCHVector.svg">
                 </a>
             </div>
             <div class="flex m-auto w-full justify-end lg:text-lg md:text-lg sm:text-xs mx-3">
@@ -23,7 +23,7 @@
                 <a class="my-4 p-1 mb-2 lg:leading-6 sm:leading-8 text-blue-500 hover:underline hover:text-blue-700" href="?section=login">Iniciar sesión</a>
             </div>
         </nav>
-        <hr class="border-gray-300 sm:-mt-3.5">
+        <hr class="border-gray-300 sm:mt-3.5">
     </header>
 
     <div class= "mx-auto my-auto">

@@ -4,10 +4,12 @@
 
 </head>
 
+
+
 <div class="flex w-full place-content-center py-44 ">
     <div class="p-8 w-96 items-center border-gray-100 border-2 rounded-lg  ">
         <div class=" place-content-center flex">
-            <img class="w-2/5 " src="resources/imgs/LogoOMRCHVector.svg">
+            <img class="w-2/5 mb-6 " src="resources/imgs/LogoOMRCHVector.svg">
         </div>
         <p class="-mt-6 mb-5 text-center text-2xl" >Inicia Sesión</p>
 
