@@ -39,12 +39,12 @@ function login(array $student, $conn) {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($result === false) {
-            throw new Exception("Invalid username or password");
+            throw new Exception("Usuario o contraseña invalidos");
         }
 
         // Verificar la contraseña utilizando password_verify
         if (!password_verify($student['password'], $result['password'])) {
-            throw new Exception("Invalid username or password");
+            throw new Exception("Usuario o contraseña invalidos");
         }
 
         $_SESSION['user'] = [
@@ -62,7 +62,7 @@ function login(array $student, $conn) {
     } catch (PDOException $e) {
         // Manejo de errores específicos de la base de datos
         endSession();
-        return json_encode(["status" => "0", "error" => $e->getMessage(), "line" => $e->getLine()]);
+        return json_encode(["status" => "0", "error" => "Error interno - Intentelo de nuevo", "dataError" =>  $e->getMessage(), "line" => $e->getLine()]);
     } catch (Exception $e) {
         // Manejo de otros tipos de errores
         endSession();

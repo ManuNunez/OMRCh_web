@@ -34,18 +34,48 @@ const sendForm = async () => {
         }
 
         const res = await response.json();
-        console.log(res);
+        // console.log(res);
 
         if (res.status == 1) {
             console.log('User logged.');
             window.location.href = '?section=contest';
         } else if (res.error) {
-            const errorMessage = res.error;
-            alert(errorMessage);
+            showErrorModal(res.error);
         } else {
-            alert('Error desconocido.');
+            showErrorModal('Error desconocido.');
         }
     } catch (error) {
-        alert(error.message); // Mensaje de error si no se encuentra el archivo
+        showErrorModal(error.message); // Mensaje de error si no se encuentra el archivo
     }
 }
+
+const showErrorModal = (message) => {
+    // Obtener elementos del modal y el fondo
+    const modal = document.getElementById('errorModal');
+    const background = document.querySelector('#errorModal .fixed.bg-black');
+
+    const modalMessage = document.getElementById('errorModalMessage');
+
+    modalMessage.textContent = message;
+
+    // Mostrar el modal y aplicar el fondo desenfocado
+    modal.classList.remove('hidden');
+    background.classList.add('block');
+
+    // evento para cerrar el modal
+    const closeButton = document.getElementById('hideErrorModalButton');
+    closeButton.addEventListener('click', () => {
+        hideErrorModal();
+    });
+};
+
+const hideErrorModal = () => {
+    const modal = document.getElementById('errorModal');
+    const background = document.querySelector('#errorModal .fixed.bg-black');
+
+    modal.classList.add('hidden');
+    background.classList.remove('block');
+};
+
+
+
