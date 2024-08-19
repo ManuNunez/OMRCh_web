@@ -76,13 +76,48 @@ session_start(); // ALEXIS NO LO BORRES;
 
         <div class="hidden  lg:flex lg:gap-x-1  m-auto w-full justify-center    lg:text-lg ">
             <?php
-                
-                echo '<a href="?section=training"         class="  my-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl  '; if($section == "training") echo "text-blue-500 font-bold hover:text-blue-500 "; else echo " text-gray-600"; echo ' ">Entrenamientos</a>';
-                echo '<a href="?section=registration"     class="  my-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl  '; if($section == "registration") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600"; echo '">Como participar</a>';
-                echo '<a href="?section=trainingMaterial" class="  my-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl '; if($section == "trainingMaterial") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600"; echo '">Material de Entrenamiento</a>';
-                echo '<a href="?section=login"            class="  my-4   p-2 px-3 mb-2 leading-6 bg-blue-500 rounded-2xl  ' ; if($section == "login") echo " font-bold  text-white "; else echo " text-white"; echo '">Iniciar sesión</a>';
-                echo '<a href="?section=sign-up"           class="  my-4   p-2 px-3 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl  hover:border-2 hover:border-black  '; if($section == "sign-up") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600"; echo '">Registrarte</a>';
+                // This part is used when the user is logout
 
+                if(!(isset($_SESSION['user']))) {
+                    //  echo '<a href="?section=training"         class="  my-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl  '; if($section == "training") echo "text-blue-500 font-bold hover:text-blue-500 "; else echo " text-gray-600"; echo ' ">Entrenamientos</a>';
+
+                    //Como participar   Desktop View
+                    echo '<a href="?section=registration"     class="  my-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl  ';
+                    if ($section == "registration") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600";
+                    echo '">Como participar</a>';
+
+                    // Material de entrenamiento  Desktop View
+                    echo '<a href="?section=trainingMaterial" class="  my-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl ';
+                    if ($section == "trainingMaterial") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600";
+                    echo '">Material de Entrenamiento</a>';
+
+                    // Iniciar sesion  Desktop View
+                    echo '<a href="?section=login"            class="  my-4   p-2 px-3 mb-2 leading-6 bg-blue-500 rounded-2xl  ';
+                    if ($section == "login") echo " font-bold  text-white "; else echo " text-white";
+                    echo '">Iniciar sesión</a>';
+
+                    // Registrarse  Desktop View
+                    echo '<a href="?section=sign-up"           class="  my-4   p-2 px-3 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl  hover:border-2 hover:border-black  ';
+                    if ($section == "sign-up") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600";
+                    echo '">Registrarte</a>';
+                }
+                // This part is used when the user is log-in
+                else{
+                    // ReGgistration example
+                    echo '<a href="?section=registration"     class="  my-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl  ';
+                    if ($section == "registration") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600";
+                    echo '">Como participar</a>';
+
+                    //Contest Desktop View
+                    echo '<a href="?section=contest"     class="  my-4   p-2 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl  ';
+                    if ($section == "contest") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600";
+                    echo '">Concursos Disponibles</a>';
+
+                    // Logout of the session  Desktop View
+                    echo '<a href="../backend/services/log_out.php" class="py-4 mb-2 leading-6 hover:text-red-500 ">Log out</a>';
+
+
+                }
                 
             ?>
         </div>

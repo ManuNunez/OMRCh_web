@@ -6,6 +6,5 @@
     <script src="resources/js/NavToggle.js"></script>
 </head>
 <body>
-
     <p class="text-3xl font-bold text-blue-500 text-center my-10">No esta permitido el acceso a esta pagina.</p>
 </body>
