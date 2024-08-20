@@ -84,7 +84,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 <button type="button" onclick="closeModal();" class="text-gray-500 mr-4">Cancelar</button>
-                <button type="button" onclick="sendForm();return false" class="bg-blue-500 text-white px-4 py-2 rounded-md">Inscribirse</button>
+                <button type="button" onclick="validateData();return false" class="bg-blue-500 text-white px-4 py-2 rounded-md">Inscribirse</button>
             </div>
         </form>
     </div>

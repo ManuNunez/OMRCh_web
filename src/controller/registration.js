@@ -1,11 +1,11 @@
 function validateData(){
-    event.preventDefault();
+    // event.preventDefault();
     const form = document.getElementById('record');
     const formElements = form.elements;
         for (let i = 0; i < formElements.length; i++) {
             if (!formElements[i].checkValidity()) {
             // Si algún campo no es válido, mostrar mensaje de error y salir de la función
-            alert('Por favor, complete todos los campos correctamente.');
+            showErrorModal('Por favor, complete todos los campos correctamente.');
             return;
             }
         }
@@ -17,8 +17,8 @@ function validateData(){
 function sendForm() {
     // Obtener datos de el formulario
     const getData = (id) => document.getElementById(id).value;
-    const name = getData('fullName');
-    const email = getData('participantEmail');
+    const name = getData('name');
+    const email = getData('email');
     const curp = getData('curp');
     const teacherName = getData('teacherName');
     const teacherEmail = getData('teacherEmail');
@@ -33,7 +33,7 @@ function sendForm() {
 }
 
 function sendDataToTheServer(formData) {
-    fetch("./../backend/services/registration_DB.php", {
+    fetch("../backend/services/registration_DB.php", {
         method: "POST",
         body: new URLSearchParams(formData),
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
@@ -45,13 +45,41 @@ function sendDataToTheServer(formData) {
             window.location.href = '?section=user-registered';
         } else if (res.error) {
             const errorMessage = res.error;
-            alert(errorMessage);
+            showErrorModal(errorMessage);
         } else {
-            alert('Error desconocido.');
+            showErrorModal('Error desconocido. Intentelo de nuevo');
         }
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('File not found!');
+        showErrorModal('Error interno. Intentelo de nuevo');
     });
 }
+
+const showErrorModal = (message) => {
+    // Obtener elementos del modal y el fondo
+    const modal = document.getElementById('errorModal');
+    const background = document.querySelector('#errorModal .fixed.bg-black');
+
+    const modalMessage = document.getElementById('errorModalMessage');
+
+    modalMessage.textContent = message;
+
+    // Mostrar el modal y aplicar el fondo desenfocado
+    modal.classList.remove('hidden');
+    background.classList.add('block');
+
+    // evento para cerrar el modal
+    const closeButton = document.getElementById('hideErrorModalButton');
+    closeButton.addEventListener('click', () => {
+        hideErrorModal();
+    });
+};
+
+const hideErrorModal = () => {
+    const modal = document.getElementById('errorModal');
+    const background = document.querySelector('#errorModal .fixed.bg-black');
+
+    modal.classList.add('hidden');
+    background.classList.remove('block');
+};

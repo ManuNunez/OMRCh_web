@@ -1,5 +1,5 @@
-function validateData(event) {
-    event.preventDefault();
+function validateData() {
+    // event.preventDefault();
 
     const form = document.getElementById('record');
     const formElements = form.elements;
@@ -7,7 +7,7 @@ function validateData(event) {
     for (let i = 0; i < formElements.length; i++) {
         if (!formElements[i].checkValidity()) {
             // Si algún campo no es válido, mostrar mensaje de error y salir de la función
-            alert('Por favor, complete todos los campos correctamente.');
+            showErrorModal('Por favor, complete todos los campos correctamente.');
             return;
         }
     }

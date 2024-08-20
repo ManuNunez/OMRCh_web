@@ -49,9 +49,12 @@ function createStudent(array $student, $conn) {
 
         return json_encode(array("status" => "1"));
     } catch (PDOException $e) {
-        return json_encode(array("status" => "0", "error" => $e->getMessage(), "line" => $e->getLine()));
+        if ($e -> getCode() == 23505) {
+            return json_encode(array("status" => "0", "error" => "Usuario ya registrado", "dataError" =>  $e->getMessage(), "line" => $e->getLine()));
+        }
+        return json_encode(array("status" => "0", "error" => "Error interno - Intentelo de nuevo", "dataError" =>  $e->getMessage(), "line" => $e->getLine()));
     } catch (Exception $e) {
-        return json_encode(array("status" => "0", "error" => $e->getMessage(), "line" => $e->getLine()));
+        return json_encode(array("status" => "0", "error" => "Error desconocido - Intentelo de nuevo", "dataError" =>  $e->getMessage(), "line" => $e->getLine()));
     }
 }
 
