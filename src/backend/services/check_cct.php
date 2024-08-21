@@ -15,10 +15,10 @@ if ($cct !== "") {
         if ($data) {
             echo json_encode(['status' => '1', 'data' => $data]);
         } else {
-            echo json_encode(['status' => '0', 'error' => 'CCT no encontrado']);
+            echo json_encode(['status' => '2', 'error' => 'CCT no encontrado']);
         }
     } catch (PDOException $e) {
-        echo json_encode(['status' => '0', 'error' => 'Error en la consulta: ' . $e->getMessage()]);
+        echo json_encode(['status' => '3', 'error' => 'Error en la consulta: ' . $e->getMessage()]);
     }
 } else {
     echo json_encode(['status' => '0', 'error' => 'CCT no proporcionado']);
