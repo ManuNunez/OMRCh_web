@@ -37,7 +37,7 @@ session_start(); // ALEXIS NO LO BORRES;
     <link href="resources/main.css" rel="stylesheet">
     <meta charset="UTF-8">
     <script src="resources/js/jquery-3.3.1.min.js"></script>
-    <script src="resources/js/NavToggle.js"></script>
+    <!-- <script src="resources/js/NavToggle.js"></script> -->
 </head>
 
 <?php
@@ -103,23 +103,23 @@ session_start(); // ALEXIS NO LO BORRES;
 
         <div class="hidden    lg:justify-end   py-3  lg:text-lg w-64 lg:inline-flex   m-auto  ">
             <?php
-             if(isset($_SESSION['user'])) {
-                 // Logout of the session  Desktop View
+                if(isset($_SESSION['user'])) {
+                    // Logout of the session  Desktop View
 
-                 echo '<a href="?section=perfildelmorro" class="my-4 p-2 mb-2 leading-6 hover:text-blue-500 whitespace-nowrap border-r-2">'. $_SESSION['user']['name'] .'</a>';
-                 echo '<a href="../backend/services/log_out.php" class="my-4 p-2 mb-2 leading-6 hover:text-red-500 ">Salir</a>';
+                    echo '<a href="?section=profile" class="my-4 p-2 mb-2 leading-6 hover:text-blue-500 whitespace-nowrap border-r-2">'. $_SESSION['user']['name'] .'</a>';
+                    echo '<a href="../backend/services/log_out.php" class="my-4 p-2 mb-2 leading-6 hover:text-red-500 ">Salir</a>';
 
-             }else{
-                 // Iniciar sesion  Desktop View
-                 echo '<a href="?section=login" class="whitespace-nowrap   my-4   p-2 px-3 mb-2 leading-6 bg-blue-500 rounded-2xl  ';
-                 if ($section == "login") echo " font-bold  text-white "; else echo " text-white";
-                 echo '">Iniciar sesión</a>';
+                }else{
+                    // Iniciar sesion  Desktop View
+                    echo '<a href="?section=login" class="whitespace-nowrap   my-4   p-2 px-3 mb-2 leading-6 bg-blue-500 rounded-2xl  ';
+                    if ($section == "login") echo " font-bold  text-white "; else echo " text-white";
+                    echo '">Iniciar sesión</a>';
 
-                 // Registrarse  Desktop View
-                 echo '<a href="?section=sign-up"           class="  my-4   p-2 px-3 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl  hover:border-2 hover:border-black  ';
-                 if ($section == "sign-up") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600";
-                 echo '">Registrarte</a>';
-             }
+                    // Registrarse  Desktop View
+                    echo '<a href="?section=sign-up"           class="  my-4   p-2 px-3 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl  hover:border-2 hover:border-black  ';
+                    if ($section == "sign-up") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600";
+                    echo '">Registrarte</a>';
+                }
             ?>
         </div>
 
@@ -168,7 +168,7 @@ session_start(); // ALEXIS NO LO BORRES;
                     <!-- <div class="flex justify-end ">
                         <a href="../controller/services/log_out.php" class="my-5 bg-red-500 text-white hover:text-bold hover:bg-red-600 rounded-lg p-2">Cerrar Sesión</a>
                     </div> -->
-                   
+
 
                 </div>
 

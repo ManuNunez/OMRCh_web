@@ -16,7 +16,7 @@ if (ini_get("session.use_cookies")) {
 session_destroy();
 
 // Redirigir a la página de login
-header("Location: ../../view/index.php");
+header("Location: ../../view/?section=login");
 exit;
 
 

@@ -1,6 +1,6 @@
 <?php
 function contentSelector($section) {
-    $allowedSections = ['training', 'registration', 'login', 'user-registered','sign-up','contest'];
+    $allowedSections = ['training', 'registration', 'login', 'user-registered','sign-up','contest', 'profile'];
     
     if (in_array($section, $allowedSections)) {
         $filename ='components/' . $section . '.php';
