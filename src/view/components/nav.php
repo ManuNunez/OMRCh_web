@@ -1,7 +1,7 @@
 <?php
 session_start(); // ALEXIS NO LO BORRES;
 
-if (!isset($_SESSION['user']) && ($_GET['section'] != 'login' && $_GET['section'] != 'registration' && $_GET['section'] != 'trainingMaterial')) {
+if (!isset($_SESSION['user']) && ($_GET['section'] != 'login' && $_GET['section'] != 'registration' && $_GET['section'] != 'trainingMaterial' && $_GET['section'] != 'sign-up')) {
     header('Location: ?section=login');
     exit();
 }
