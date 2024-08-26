@@ -1,5 +1,10 @@
 <?php
 session_start(); // ALEXIS NO LO BORRES;
+
+if (!isset($_SESSION['user']) && $_GET['section'] != 'login') {
+    header('Location: ?section=login');
+    exit();
+}
 ?>
 <!-- nav.php -->
 <!-- <nav class="bg-blue-500 p-4">

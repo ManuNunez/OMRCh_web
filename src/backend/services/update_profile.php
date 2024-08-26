@@ -2,11 +2,6 @@
 session_start();
 include_once '../config/con.php';
 
-if (!isset($_SESSION['user'])) {
-    header('Location: ?section=login');
-    exit();
-}
-
 $conn = connection();
 
 $updateFields = [];
