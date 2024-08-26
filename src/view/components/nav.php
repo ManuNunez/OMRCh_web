@@ -62,7 +62,7 @@ if (!isset($_SESSION['user']) && ($_GET['section'] != 'login' && $_GET['section'
              Desktop and mobile View
              left part, logo
     -->
-    <nav class=" flex justify-between px-2 sm:mt-5" aria-label="Global">
+    <nav class=" flex justify-between px-2 " aria-label="Global">
         <div class="w-36 lg:mx-auto lg:my-auto  ">
             <a href="?section=index" class="">
                 <span class="sr-only">OMRCH</span>
