@@ -5,9 +5,9 @@
 </head>
 <body>
 
-    <header class="bg-white mb-5">
+    <header class="bg-white mb-5 mt-5">
         <nav class=" flex justify-between px-2" aria-label="Global">
-            <div class="w-36 mx-auto my-auto">
+            <div class="w-36 mx-auto">
                 <a href="?section=index" class="">
                     <span class="sr-only">OMRCH</span>
                     <img class="w-full" src="resources/imgs/LogoOMRCHVector.svg">

@@ -81,7 +81,6 @@
                 <label for="teacherEmail" class="block text-sm font-medium text-gray-700">Correo del Profesor</label>
                 <input type="email" id="teacherEmail" name="teacherEmail" class="mt-1 p-2 w-full border rounded-md" required>
             </div>
-
             <div class="flex items-center justify-end mt-4">
                 <button type="button" onclick="closeModal();" class="text-gray-500 mr-4">Cancelar</button>
                 <button type="button" onclick="validateData();return false" class="bg-blue-500 text-white px-4 py-2 rounded-md">Inscribirse</button>
