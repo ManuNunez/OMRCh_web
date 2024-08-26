@@ -1,7 +1,7 @@
 <?php
 session_start(); // ALEXIS NO LO BORRES;
 
-if (!isset($_SESSION['user']) && $_GET['section'] != 'login') {
+if (!isset($_SESSION['user']) && ($_GET['section'] != 'login' && $_GET['section'] != 'registration' && $_GET['section'] != 'trainingMaterial')) {
     header('Location: ?section=login');
     exit();
 }
@@ -120,28 +120,9 @@ if (!isset($_SESSION['user']) && $_GET['section'] != 'login') {
        -->
         <div class="hidden    lg:justify-end   py-3  lg:text-lg w-64 lg:inline-flex space-x-2  m-auto  ">
             <?php
-<<<<<<< Updated upstream
-                if(isset($_SESSION['user'])) {
-                    // Logout of the session  Desktop View
-
-                    echo '<a href="?section=profile" class="my-4 p-2 mb-2 leading-6 hover:text-blue-500 whitespace-nowrap border-r-2">'. $_SESSION['user']['name'] .'</a>';
-                    echo '<a href="../backend/services/log_out.php" class="my-4 p-2 mb-2 leading-6 hover:text-red-500 ">Salir</a>';
-
-                }else{
-                    // Iniciar sesion  Desktop View
-                    echo '<a href="?section=login" class="whitespace-nowrap   my-4   p-2 px-3 mb-2 leading-6 bg-blue-500 rounded-2xl  ';
-                    if ($section == "login") echo " font-bold  text-white "; else echo " text-white";
-                    echo '">Iniciar sesión</a>';
-
-                    // Registrarse  Desktop View
-                    echo '<a href="?section=sign-up"           class="  my-4   p-2 px-3 mb-2 leading-6 hover:bg-gray-100 hover:text-black rounded-2xl  hover:border-2 hover:border-black  ';
-                    if ($section == "sign-up") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600";
-                    echo '">Registrarte</a>';
-                }
-=======
              if(isset($_SESSION['user'])) {
                  // Logout of the session  Desktop View
-                 echo '<a href="?section=perfildelmorro" class="my-4 p-2 mb-2 leading-6 hover:text-blue-500 whitespace-nowrap border-r-2">'. $_SESSION['user']['name'] .'</a>';
+                 echo '<a href="?section=profile" class="my-4 p-2 mb-2 leading-6 hover:text-blue-500 whitespace-nowrap border-r-2">'. $_SESSION['user']['name'] .'</a>';
                  echo '<a href="../backend/services/log_out.php" class="my-4 p-2 mb-2 leading-6 hover:text-red-500 ">Salir</a>';
              }else{
                  // Iniciar sesion  Desktop View
@@ -155,7 +136,6 @@ if (!isset($_SESSION['user']) && $_GET['section'] != 'login') {
                  if ($section == "sign-up") echo "text-blue-500 font-bold hover:text-blue-500"; else echo " text-gray-600";
                  echo '">Registrarte</a>';
              }
->>>>>>> Stashed changes
             ?>
         </div>
 
