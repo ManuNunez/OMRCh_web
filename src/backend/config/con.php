@@ -3,9 +3,9 @@
 // *** Server dataBase ***
 define("HOST", '45.79.19.252'); // Database Ipv4
 define("PORT", '5432'); // Database port
-define("BD", 'postgres'); // Database name
-define("USER_BD", 'clu'); // Database Username
-define("PASS_BD", 'Iker4554');
+define("BD", 'omrch'); // Database name
+define("USER_BD", 'services'); // Database Username
+define("PASS_BD", 'omrch-2024-SEP');
 
 /*
 // *** localHost dataBase ***
