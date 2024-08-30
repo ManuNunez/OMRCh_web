@@ -87,14 +87,15 @@ const showErrorModal = (message, title) => {
     
     modalMessage.textContent = message;
 
-    // Mostrar el modal y aplicar el fondo desenfocado
+    // Mostrar el modal
     modal.classList.remove('hidden');
     background.classList.add('block');
 
     // evento para cerrar el modal
-    const closeButton = document.getElementById('hideErrorModalButton');
-    closeButton.addEventListener('click', () => {
-        hideErrorModal();
+    const closeButtons = document.getElementById('[data-modal-hide="hideErrorModalButton"]');
+
+    closeButtons.forEach((button) => {
+        button.addEventListener('click', hideErrorModal);
     });
 };
 
